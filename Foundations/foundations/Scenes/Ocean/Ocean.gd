@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var plane: Sprite2D = $Carrier/Plane
+@onready var plane: Sprite2D = %Plane
 @onready var helicopter: Sprite2D = $Helicopter
 @onready var eating_sound: AudioStreamPlayer = $EatingSound
 
@@ -11,7 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#plane.move_local_x(250.0 * delta)
+	plane.global_position.x += 60.0 * delta
 	#helicopter.move_local_x(150.0 * delta)
 	#helicopter.rotate(2 * delta)
 	
