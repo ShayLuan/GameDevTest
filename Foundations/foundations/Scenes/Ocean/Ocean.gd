@@ -11,9 +11,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	plane.move_local_x(250.0 * delta)
-	helicopter.move_local_x(150.0 * delta)
-	helicopter.rotate(2 * delta)
+	#plane.move_local_x(250.0 * delta)
+	#helicopter.move_local_x(150.0 * delta)
+	#helicopter.rotate(2 * delta)
 	
 	if Input.is_action_pressed("ui_left"):
 		plane.rotate(-1.5 * delta)
