@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var plane: Sprite2D = $Plane
+@onready var plane: Sprite2D = $Carrier/Plane
 @onready var helicopter: Sprite2D = $Helicopter
 @onready var eating_sound: AudioStreamPlayer = $EatingSound
 
@@ -20,4 +20,5 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_right"):
 		plane.rotate(1.5 * delta)
 	if Input.is_action_just_pressed("ui_accept"):
-		eating_sound.play()
+		plane.position = Vector2(350, 150)
+		helicopter.global_position = Vector2(400, 580)
