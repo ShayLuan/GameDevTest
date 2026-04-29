@@ -11,8 +11,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	plane.global_position.x += 60.0 * delta
-	helicopter.translate(Vector2.RIGHT * 60.0 * delta) # moving using translate
+	# var dir: Vector2 = plane.position.direction_to(helicopter.position)
+	plane.look_at(get_global_mouse_position())
+	plane.move_local_x(200.0 * delta)
+	#helicopter.translate(Vector2.DOWN * 20.0 * delta) # moving using translate
 	#helicopter.rotate(2 * delta)
 	
 	if Input.is_action_pressed("ui_left"):

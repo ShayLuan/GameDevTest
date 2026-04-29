@@ -15,17 +15,17 @@ texture = ExtResource("2_fyc3p")
 centered = false
 
 [node name="Helicopter" type="Sprite2D" parent="." unique_id=781930366]
-position = Vector2(267, 503)
+position = Vector2(938, 521)
 texture = ExtResource("4_4wd1y")
 
 [node name="EatingSound" type="AudioStreamPlayer" parent="." unique_id=979627562]
 stream = ExtResource("5_fyc3p")
 
+[node name="Plane" type="Sprite2D" parent="." unique_id=202675577]
+unique_name_in_owner = true
+position = Vector2(281, 356)
+texture = ExtResource("3_t11xa")
+
 [node name="Carrier" type="Sprite2D" parent="." unique_id=2073336755]
 position = Vector2(790, 190)
 texture = ExtResource("5_t11xa")
-
-[node name="Plane" type="Sprite2D" parent="Carrier" unique_id=202675577]
-unique_name_in_owner = true
-position = Vector2(-502, 195)
-texture = ExtResource("3_t11xa")
