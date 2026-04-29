@@ -22,11 +22,10 @@ texture = ExtResource("4_4wd1y")
 stream = ExtResource("5_fyc3p")
 
 [node name="Carrier" type="Sprite2D" parent="." unique_id=2073336755]
-position = Vector2(699, 200)
-scale = Vector2(0.5, 0.5)
+position = Vector2(790, 190)
 texture = ExtResource("5_t11xa")
 
 [node name="Plane" type="Sprite2D" parent="Carrier" unique_id=202675577]
 unique_name_in_owner = true
-position = Vector2(-848, 396)
+position = Vector2(-502, 195)
 texture = ExtResource("3_t11xa")
