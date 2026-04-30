@@ -4,6 +4,7 @@ extends EditorScript
 
 # Called when the script is executed (using File -> Run in Script Editor).
 func _run() -> void:
+	Character.character_count = 0 # reset the count to zero, otherwise IDE memory
 	#print("I am alive")
 	#
 	#var riley: Character = Character.new(250, "Riley", "Whip")
@@ -24,6 +25,9 @@ func _run() -> void:
 	
 	var kenzie: Character = Character.new(180, "Kenzie", "Dagger")
 	kenzie.say_info()
+	
+	print(Character.character_count)
+	print(Character.get_character_count())
 	
 	
 	

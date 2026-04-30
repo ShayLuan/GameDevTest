@@ -1,5 +1,12 @@
 class_name Character
 
+static var character_count: int = 0 # exists at the class level
+
+static func get_character_count() -> String:
+	return "There are %d characters currently. " % character_count
+	
+const MAX_SPEED = 9000
+
 var _health: int = 50
 
 #var health: int:
@@ -31,6 +38,7 @@ func _init(p_health: int, p_name: String, p_weapon: String) -> void:
 	_health = p_health
 	name = p_name
 	weapon = p_weapon
+	character_count += 1
 
 func print_health() -> void:
 	print("Health: %d" % _health)
