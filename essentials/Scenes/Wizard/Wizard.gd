@@ -1,4 +1,4 @@
-class_name Hobbit
+class_name Wizard
 
 extends Node2D
 
@@ -10,4 +10,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotate(3.0 * delta)
+	pass
