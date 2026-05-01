@@ -1,7 +1,12 @@
 @tool
 extends EditorScript
 
-
+func do_stuff() -> void:
+	print("do_stuff()")
+	var c: Character = Character.new(220, "bro", "club")
+	print(c)
+	print("do_stuff() done")
+	
 # Called when the script is executed (using File -> Run in Script Editor).
 func _run() -> void:
 	Character.character_count = 0 # reset the count to zero, otherwise IDE memory
@@ -23,11 +28,12 @@ func _run() -> void:
 	riley.health = 2000
 	print(riley.health)
 	
-	var kenzie: Character = Character.new(180, "Kenzie", "Dagger")
+	var kenzie: Hero = Hero.new(180, "Kenzie", "Dagger")
 	kenzie.say_info()
 	
 	print(Character.character_count)
 	print(Character.get_character_count())
+	print(kenzie)
 	
 	
 	

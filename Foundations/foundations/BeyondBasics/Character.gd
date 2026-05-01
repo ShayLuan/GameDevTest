@@ -55,3 +55,6 @@ func set_health(new_health: int) -> void:
 	if new_health >= 300: health = 300
 	elif new_health <= 0: health = 0
 	
+#func _to_string() -> String:
+	#return "%s reports for duty! " % name
+	
