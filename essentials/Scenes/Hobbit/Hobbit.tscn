@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bnxvywdqw50bf"]
+
+[ext_resource type="Texture2D" uid="uid://b7ju6af71nhu3" path="res://Assets/Hobbit.png" id="1_y5jml"]
+
+[node name="Hobbit" type="Node2D" unique_id=907800685]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1170754238]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_y5jml")
