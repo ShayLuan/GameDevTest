@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://lvxukvk30obu"]
 
 [ext_resource type="Texture2D" uid="uid://cgn6sbdeg6w8b" path="res://Assets/Bg.png" id="1_0nbjp"]
+[ext_resource type="Script" uid="uid://dk1ky777gx174" path="res://Scenes/World/World.gd" id="1_5jr8x"]
 [ext_resource type="PackedScene" uid="uid://bnxvywdqw50bf" path="res://Scenes/Hobbit/Hobbit.tscn" id="2_ouhkt"]
 [ext_resource type="PackedScene" uid="uid://defehin0147mo" path="res://Scenes/Wizard/Wizard.tscn" id="3_5jr8x"]
 
 [node name="World" type="Node" unique_id=854156197]
+script = ExtResource("1_5jr8x")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1876995869]
 texture = ExtResource("1_0nbjp")
 centered = false
 
 [node name="Hobbit" parent="." unique_id=907800685 instance=ExtResource("2_ouhkt")]
-position = Vector2(204, 251)
+position = Vector2(249, 444)
 hide_time = 1.5
 
-[node name="Hobbit2" parent="." unique_id=1842517122 instance=ExtResource("2_ouhkt")]
-position = Vector2(294, 424)
-hide_time = 1.0
-
 [node name="Wizard" parent="." unique_id=1894173785 instance=ExtResource("3_5jr8x")]
-position = Vector2(929, 326)
+position = Vector2(943, 431)
+
+[connection signal="kill_wizard" from="Hobbit" to="." method="_on_hobbit_kill_wizard"]
+[connection signal="cast_spell" from="Wizard" to="." method="_on_wizard_cast_spell"]

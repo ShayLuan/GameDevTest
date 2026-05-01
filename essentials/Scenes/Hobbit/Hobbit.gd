@@ -5,6 +5,12 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hide_timer: Timer = $HideTimer
 
+signal kill_wizard
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("hit_wizard"):
+		kill_wizard.emit()
+
 var p_frames: int = 0
 var ph_frames: int = 0
 
@@ -19,7 +25,14 @@ func _exit_tree() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hide_timer.start(hide_time)
+	# hide_timer.start(hide_time)
+	pass
+	
+func _process(delta: float) -> void:
+	rotate(PI * delta)
 
-func _on_timer_timeout_hide() -> void:
-	hide()
+func hit_by_spell() -> void:
+	scale = Vector2(0.2, 0.2)
+	set_process(false)
+
+	
