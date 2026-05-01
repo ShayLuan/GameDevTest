@@ -12,6 +12,11 @@ centered = false
 
 [node name="Hobbit" parent="." unique_id=907800685 instance=ExtResource("2_ouhkt")]
 position = Vector2(204, 251)
+hide_time = 1.5
+
+[node name="Hobbit2" parent="." unique_id=1842517122 instance=ExtResource("2_ouhkt")]
+position = Vector2(294, 424)
+hide_time = 1.0
 
 [node name="Wizard" parent="." unique_id=1894173785 instance=ExtResource("3_5jr8x")]
 position = Vector2(929, 326)

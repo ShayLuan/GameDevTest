@@ -1,7 +1,9 @@
 class_name Hobbit
 
 extends Node2D
+@export var hide_time: float = 2.0
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var hide_timer: Timer = $HideTimer
 
 var p_frames: int = 0
 var ph_frames: int = 0
@@ -17,15 +19,7 @@ func _exit_tree() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("_ready: %s, %s " % [get_instance_id(), name])
+	hide_timer.start(hide_time)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	p_frames += 1
-	print("_process %d" % p_frames)
-
-func _physics_process(delta: float) -> void:
-	ph_frames += 1
-	print("_physics_process %d" % ph_frames)
-	
+func _on_timer_timeout_hide() -> void:
+	hide()
