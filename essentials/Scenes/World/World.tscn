@@ -18,6 +18,3 @@ hide_time = 1.5
 
 [node name="Wizard" parent="." unique_id=1894173785 instance=ExtResource("3_5jr8x")]
 position = Vector2(943, 431)
-
-[connection signal="kill_wizard" from="Hobbit" to="." method="_on_hobbit_kill_wizard"]
-[connection signal="cast_spell" from="Wizard" to="." method="_on_wizard_cast_spell"]
