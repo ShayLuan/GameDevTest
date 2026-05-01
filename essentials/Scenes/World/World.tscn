@@ -13,11 +13,5 @@ centered = false
 [node name="Hobbit" parent="." unique_id=907800685 instance=ExtResource("2_ouhkt")]
 position = Vector2(204, 251)
 
-[node name="Hobbit2" parent="." unique_id=125769773 instance=ExtResource("2_ouhkt")]
-position = Vector2(207, 406)
-
-[node name="Hobbit3" parent="." unique_id=161484200 instance=ExtResource("2_ouhkt")]
-position = Vector2(316, 261)
-
 [node name="Wizard" parent="." unique_id=1894173785 instance=ExtResource("3_5jr8x")]
 position = Vector2(929, 326)
