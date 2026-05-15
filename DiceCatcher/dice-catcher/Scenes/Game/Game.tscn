@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bfgf0x1lf4aj2"]
 
 [ext_resource type="Texture2D" uid="uid://djjponsttwqfs" path="res://Assets/GemBg.png" id="1_rdw05"]
+[ext_resource type="Script" uid="uid://dd37yws3ngm1v" path="res://Scenes/Game/Game.gd" id="1_xbxml"]
 [ext_resource type="PackedScene" uid="uid://c6wsbyjga68up" path="res://Scenes/Dice/Dice.tscn" id="2_gwu2e"]
 
 [node name="Game" type="Node2D" unique_id=1525186973]
+script = ExtResource("1_xbxml")
 
 [node name="GemBg" type="Sprite2D" parent="." unique_id=1883306813]
 position = Vector2(574, 322)
@@ -13,8 +15,7 @@ texture = ExtResource("1_rdw05")
 [node name="Dice" parent="." unique_id=1055127700 instance=ExtResource("2_gwu2e")]
 position = Vector2(448, 140)
 
-[node name="Dice2" parent="." unique_id=508227854 instance=ExtResource("2_gwu2e")]
-position = Vector2(168, 139)
+[node name="Dice2" parent="." unique_id=659045045 instance=ExtResource("2_gwu2e")]
 
-[node name="Dice3" parent="." unique_id=38846414 instance=ExtResource("2_gwu2e")]
-position = Vector2(652, 64)
+[connection signal="game_over" from="Dice" to="." method="_on_dice_game_over"]
+[connection signal="game_over" from="Dice2" to="." method="_on_dice_game_over"]

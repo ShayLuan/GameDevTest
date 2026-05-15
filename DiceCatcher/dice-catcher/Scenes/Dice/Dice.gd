@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Dice
 
+signal game_over
+
 const SPEED = 85.0
 const ROTATION_SPEED = 5.0
 
@@ -25,4 +27,5 @@ func check_game_over() -> void:
 	if get_viewport_rect().end.y < position.y:
 		#print("Off screen now")
 		#set_physics_process(false)
+		game_over.emit()
 		queue_free()
