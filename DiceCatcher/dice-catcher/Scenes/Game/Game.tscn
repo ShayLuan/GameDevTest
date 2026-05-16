@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://djjponsttwqfs" path="res://Assets/GemBg.png" id="1_rdw05"]
 [ext_resource type="Script" uid="uid://dd37yws3ngm1v" path="res://Scenes/Game/Game.gd" id="1_xbxml"]
 
-[node name="Game" type="Node2D" unique_id=1525186973]
+[node name="Game" type="Node2D" unique_id=1525186973 groups=["stoppable"]]
 script = ExtResource("1_xbxml")
 
 [node name="GemBg" type="Sprite2D" parent="." unique_id=1883306813]

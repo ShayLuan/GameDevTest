@@ -2,6 +2,14 @@ extends Node2D
 
 const DICE = preload("res://Scenes/Dice/Dice.tscn")
 const MARGIN: float = 75.0
+const STOPPABLE_GROUP: String = "stoppable"
+
+@onready var spawn_timer: Timer = $SpawnTimer
+
+# reloading the game
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,8 +26,15 @@ func spawnd_dice() -> void:
 	newDice.game_over.connect(_on_dice_game_over)
 	add_child(newDice)
 	
+func pause_all() -> void:
+	spawn_timer.stop()
+	var to_stop: Array[Node] = get_tree().get_nodes_in_group(STOPPABLE_GROUP)
+	for item in to_stop:
+		item.set_physics_process(false)
+	
 func _on_dice_game_over() -> void:
 	print("Game over")
+	pause_all()
 
 
 func _on_spawn_timer_timeout() -> void:
