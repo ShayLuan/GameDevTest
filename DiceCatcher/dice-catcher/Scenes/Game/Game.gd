@@ -3,8 +3,13 @@ extends Node2D
 const DICE = preload("res://Scenes/Dice/Dice.tscn")
 const MARGIN: float = 75.0
 const STOPPABLE_GROUP: String = "stoppable"
+const GAME_OVER = preload("res://Assets/game_over.wav")
 
+@onready var score_label: Label = $ScoreLabel
 @onready var spawn_timer: Timer = $SpawnTimer
+@onready var music: AudioStreamPlayer = $Music
+
+var _points: int = 0
 
 # reloading the game
 func _unhandled_input(event: InputEvent) -> void:
@@ -14,6 +19,7 @@ func _unhandled_input(event: InputEvent) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawnd_dice()
+	update_score_label()
 
 func spawnd_dice() -> void:
 	var newDice: Dice = DICE.instantiate()
@@ -32,9 +38,16 @@ func pause_all() -> void:
 	for item in to_stop:
 		item.set_physics_process(false)
 	
+func update_score_label() -> void:
+	score_label.text = "%04d" % _points
+
+
 func _on_dice_game_over() -> void:
 	print("Game over")
 	pause_all()
+	music.stop()
+	music.stream = GAME_OVER
+	music.play()
 
 
 func _on_spawn_timer_timeout() -> void:
@@ -42,4 +55,5 @@ func _on_spawn_timer_timeout() -> void:
 
 
 func _on_fox_point_scored() -> void:
-	print("Point scored")
+	_points += 1
+	update_score_label()
