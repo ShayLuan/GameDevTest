@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b22egwmkn731q"]
 
+[ext_resource type="Script" uid="uid://b8lywdoo2fm20" path="res://Scenes/Tappy/tappy.gd" id="1_46n2r"]
 [ext_resource type="Texture2D" uid="uid://botbxqaehsg8l" path="res://Assets/plane/planes_sheet.png" id="1_e2xxp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46n2r"]
@@ -36,6 +37,7 @@ radius = 22.0
 height = 58.0
 
 [node name="Tappy" type="CharacterBody2D" unique_id=1317917152]
+script = ExtResource("1_46n2r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1381942835]
 scale = Vector2(0.75, 0.75)
