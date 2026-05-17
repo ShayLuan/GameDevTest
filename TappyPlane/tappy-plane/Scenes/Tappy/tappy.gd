@@ -14,7 +14,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	velocity.y += _gravity * delta
 	if _jumped:
-		velocity.y = JUMP_POWER
+		velocity.y = JUMP_POWER 
 		_jumped = false
 		
 	#if Input.is_action_just_pressed("power"):
