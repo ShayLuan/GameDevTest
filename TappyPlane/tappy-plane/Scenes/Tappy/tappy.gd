@@ -16,4 +16,8 @@ func _physics_process(delta: float) -> void:
 	if _jumped:
 		velocity.y = JUMP_POWER
 		_jumped = false
+		
+	#if Input.is_action_just_pressed("power"):
+		#velocity.y = JUMP_POWER
+	
 	move_and_slide()
