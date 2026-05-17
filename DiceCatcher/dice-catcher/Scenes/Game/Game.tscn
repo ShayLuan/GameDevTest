@@ -15,20 +15,13 @@ shadow_size = 11
 shadow_color = Color(0.07450981, 0.07450981, 0.07450981, 0.33333334)
 
 [node name="Game" type="Node2D" unique_id=1525186973 groups=["stoppable"]]
+process_mode = 3
 script = ExtResource("1_xbxml")
 
 [node name="GemBg" type="Sprite2D" parent="." unique_id=1883306813]
 position = Vector2(574, 322)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_rdw05")
-
-[node name="SpawnTimer" type="Timer" parent="." unique_id=2075861240]
-wait_time = 2.0
-autostart = true
-
-[node name="Fox" parent="." unique_id=849377334 instance=ExtResource("3_xbxml")]
-z_index = 1
-position = Vector2(622, 535)
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=830346801]
 offset_left = 16.0
@@ -39,9 +32,21 @@ text = "SCORE"
 label_settings = SubResource("LabelSettings_y3kpf")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=93026739]
+process_mode = 3
 stream = ExtResource("5_y3kpf")
 volume_db = -8.0
 autoplay = true
 
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="point_scored" from="Fox" to="." method="_on_fox_point_scored"]
+[node name="Pausable" type="Node" parent="." unique_id=799421788]
+process_mode = 1
+
+[node name="Fox" parent="Pausable" unique_id=849377334 instance=ExtResource("3_xbxml")]
+z_index = 1
+position = Vector2(622, 535)
+
+[node name="SpawnTimer" type="Timer" parent="Pausable" unique_id=2075861240]
+wait_time = 2.0
+autostart = true
+
+[connection signal="point_scored" from="Pausable/Fox" to="." method="_on_fox_point_scored"]
+[connection signal="timeout" from="Pausable/SpawnTimer" to="." method="_on_spawn_timer_timeout"]

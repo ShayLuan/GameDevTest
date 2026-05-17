@@ -6,8 +6,9 @@ const STOPPABLE_GROUP: String = "stoppable"
 const GAME_OVER = preload("res://Assets/game_over.wav")
 
 @onready var score_label: Label = $ScoreLabel
-@onready var spawn_timer: Timer = $SpawnTimer
+@onready var spawn_timer: Timer = $Pausable/SpawnTimer
 @onready var music: AudioStreamPlayer = $Music
+@onready var pausable: Node = $Pausable
 
 var _points: int = 0
 
@@ -18,10 +19,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spawnd_dice()
+	get_tree().paused = false
+	spawn_dice()
 	update_score_label()
 
-func spawnd_dice() -> void:
+func spawn_dice() -> void:
 	var newDice: Dice = DICE.instantiate()
 	var vpr: Rect2 = get_viewport_rect()
 	var new_x: float = randf_range(
@@ -30,7 +32,7 @@ func spawnd_dice() -> void:
 	)
 	newDice.position = Vector2(new_x, -MARGIN)
 	newDice.game_over.connect(_on_dice_game_over)
-	add_child(newDice)
+	pausable.add_child(newDice)
 	
 func pause_all() -> void:
 	spawn_timer.stop()
@@ -44,14 +46,15 @@ func update_score_label() -> void:
 
 func _on_dice_game_over() -> void:
 	print("Game over")
-	pause_all()
+	#pause_all()
 	music.stop()
 	music.stream = GAME_OVER
 	music.play()
+	get_tree().paused = true
 
 
 func _on_spawn_timer_timeout() -> void:
-	spawnd_dice()
+	spawn_dice()
 
 
 func _on_fox_point_scored() -> void:
