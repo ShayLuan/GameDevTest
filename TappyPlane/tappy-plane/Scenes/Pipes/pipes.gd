@@ -1,5 +1,6 @@
 extends Node2D
-@onready var pipes: Node2D = $"."
+
+class_name Pipes
 
 const PIPES_SPEED: float = 120.0
 
@@ -11,3 +12,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	position.x -= PIPES_SPEED * delta
+
+
+func _on_screen_notifier_screen_exited() -> void:
+	queue_free()
+
+# preventing bugs, definitely free it after timeout
+func _on_life_timer_timeout() -> void:
+	queue_free()

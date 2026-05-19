@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Tappy
+
 const JUMP_POWER: float = -350.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D

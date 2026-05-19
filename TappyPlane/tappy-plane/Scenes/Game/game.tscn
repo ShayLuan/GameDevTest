@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://u1hxa5tfq6x0" path="res://Assets/background/rocks_2.png" id="1_mv0hc"]
 [ext_resource type="PackedScene" uid="uid://b22egwmkn731q" path="res://Scenes/Tappy/Tappy.tscn" id="2_qxfds"]
 [ext_resource type="PackedScene" uid="uid://bda3ute86so85" path="res://Scenes/Barrier/Barrier.tscn" id="3_qikps"]
-[ext_resource type="PackedScene" uid="uid://qi3o5otw4cs5" path="res://Scenes/Pipes/Pipes.tscn" id="4_i1e5p"]
 
 [node name="Game" type="Node" unique_id=384787259]
 
@@ -16,5 +15,4 @@ position = Vector2(80, 443)
 
 [node name="Barrier" parent="." unique_id=1668203199 instance=ExtResource("3_qikps")]
 
-[node name="Pipes" parent="." unique_id=422174043 instance=ExtResource("4_i1e5p")]
-position = Vector2(196, 427)
+[node name="PipesHolder" type="Node" parent="." unique_id=1906376311]
