@@ -19,5 +19,13 @@ func _process(delta: float) -> void:
 		position += velocity * delta
 
 
-func _on_button_pressed() -> void:
+#func _on_button_pressed() -> void:
+	#toggle()
+#
+#
+#func _on_timer_timeout() -> void:
+	#self.visible = !self.visible
+
+
+func _on_example_1_world_toggle_icon_spin() -> void:
 	toggle()
