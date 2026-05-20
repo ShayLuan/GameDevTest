@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dbcqaytogsgeq"]
+
+[ext_resource type="Texture2D" uid="uid://cthohx66yw3bt" path="res://icon.svg" id="1_0xbvr"]
+[ext_resource type="Script" uid="uid://b15nptqy10e1x" path="res://Example1World/sprite_2d.gd" id="2_dtmm1"]
+
+[node name="Example1_world" type="Node2D" unique_id=137318528]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=357488011]
+position = Vector2(549, 402)
+texture = ExtResource("1_0xbvr")
+script = ExtResource("2_dtmm1")
+
+[node name="Timer" type="Timer" parent="." unique_id=1410853543]
+
+[node name="Button" type="Button" parent="." unique_id=242474643]
+offset_left = 418.0
+offset_top = 259.0
+offset_right = 529.0
+offset_bottom = 313.0
