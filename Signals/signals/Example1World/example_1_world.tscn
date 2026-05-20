@@ -17,3 +17,5 @@ offset_left = 418.0
 offset_top = 259.0
 offset_right = 529.0
 offset_bottom = 313.0
+
+[connection signal="pressed" from="Button" to="Sprite2D" method="_on_button_pressed"]
