@@ -54,3 +54,7 @@ color = Color(0.25490198, 0.7882353, 1, 1)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Plate3" unique_id=292733318]
 position = Vector2(951, 177)
 shape = SubResource("RectangleShape2D_w33c6")
+
+[connection signal="body_entered" from="Plate1" to="." method="_on_plate_1_body_entered"]
+[connection signal="body_entered" from="Plate2" to="." method="_on_plate_2_body_entered"]
+[connection signal="body_entered" from="Plate3" to="." method="_on_plate_3_body_entered"]
