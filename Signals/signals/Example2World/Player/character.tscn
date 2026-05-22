@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bfv3ev6fobs2d"]
+
+[ext_resource type="Texture2D" uid="uid://y8rggg8e545d" path="res://Assets/Character/character_green_front.png" id="1_4qf2g"]
+[ext_resource type="Script" uid="uid://cds2jqfb1i5vo" path="res://Example2World/Player/character.gd" id="1_mpvkf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mpvkf"]
+radius = 34.0
+height = 88.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=523630623]
+script = ExtResource("1_mpvkf")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=106564217]
+texture = ExtResource("1_4qf2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123540114]
+position = Vector2(0, 14)
+shape = SubResource("CapsuleShape2D_mpvkf")
