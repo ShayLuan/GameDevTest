@@ -76,5 +76,8 @@ shape = SubResource("RectangleShape2D_w33c6")
 position = Vector2(551, 311)
 
 [connection signal="body_entered" from="Plate1" to="." method="_on_plate_1_body_entered"]
+[connection signal="body_exited" from="Plate1" to="." method="_on_plate_1_body_exited"]
 [connection signal="body_entered" from="Plate2" to="." method="_on_plate_2_body_entered"]
+[connection signal="body_exited" from="Plate2" to="." method="_on_plate_2_body_exited"]
 [connection signal="body_entered" from="Plate3" to="." method="_on_plate_3_body_entered"]
+[connection signal="body_exited" from="Plate3" to="." method="_on_plate_3_body_exited"]
