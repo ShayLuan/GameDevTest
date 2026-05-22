@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cl5675f2iait0" path="res://Example2World/example_2_world.gd" id="1_qljc1"]
 [ext_resource type="Texture2D" uid="uid://bexcbovn2q211" path="res://Assets/background_solid_sky.png" id="1_tbjde"]
+[ext_resource type="Texture2D" uid="uid://qudwio4wrffe" path="res://Assets/background_solid_dirt.png" id="3_ee1dc"]
 [ext_resource type="PackedScene" uid="uid://bfv3ev6fobs2d" path="res://Example2World/Player/character.tscn" id="3_w33c6"]
+[ext_resource type="Texture2D" uid="uid://b1vk3518xs6t0" path="res://Assets/background_solid_grass.png" id="4_go1ue"]
+[ext_resource type="Texture2D" uid="uid://d3s8cqle6sgsv" path="res://Assets/background_solid_sand.png" id="5_7vwcb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w33c6"]
 size = Vector2(128, 109.5)
@@ -14,6 +17,21 @@ script = ExtResource("1_qljc1")
 position = Vector2(575.00006, 326)
 scale = Vector2(2.2988281, 1.3085938)
 texture = ExtResource("1_tbjde")
+
+[node name="Background2" type="Sprite2D" parent="." unique_id=2075324350]
+position = Vector2(597, 340)
+scale = Vector2(2.5039063, 1.4570313)
+texture = ExtResource("3_ee1dc")
+
+[node name="Background3" type="Sprite2D" parent="." unique_id=1057737783]
+position = Vector2(607, 320.5)
+scale = Vector2(3.1132813, 1.9863281)
+texture = ExtResource("4_go1ue")
+
+[node name="Background4" type="Sprite2D" parent="." unique_id=806358126]
+position = Vector2(593, 325)
+scale = Vector2(2.8417969, 1.8261719)
+texture = ExtResource("5_7vwcb")
 
 [node name="Plate1" type="Area2D" parent="." unique_id=1872943412]
 
