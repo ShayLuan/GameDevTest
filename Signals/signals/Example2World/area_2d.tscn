@@ -13,6 +13,10 @@ size = Vector2(128, 109.5)
 [node name="Example2World" type="Node2D" unique_id=1514995977]
 script = ExtResource("1_qljc1")
 
+[node name="CharacterBody2D" parent="." unique_id=523630623 instance=ExtResource("3_w33c6")]
+z_index = 1
+position = Vector2(551, 311)
+
 [node name="Background" type="Sprite2D" parent="." unique_id=147083241]
 position = Vector2(575.00006, 326)
 scale = Vector2(2.2988281, 1.3085938)
@@ -71,9 +75,6 @@ color = Color(0.25490198, 0.7882353, 1, 1)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Plate3" unique_id=292733318]
 position = Vector2(951, 177)
 shape = SubResource("RectangleShape2D_w33c6")
-
-[node name="CharacterBody2D" parent="." unique_id=523630623 instance=ExtResource("3_w33c6")]
-position = Vector2(551, 311)
 
 [connection signal="body_entered" from="Plate1" to="." method="_on_plate_1_body_entered"]
 [connection signal="body_exited" from="Plate1" to="." method="_on_plate_1_body_exited"]

@@ -17,30 +17,30 @@ func _physics_process(delta: float) -> void:
 	pass
 
 
-func _on_plate_1_body_entered(body: Node2D) -> void:
-	print(body)
-	print("Entered Pink")
-	background_2.visible = true
+#func _on_plate_1_body_entered(body: Node2D) -> void:
+	#print(body)
+	#print("Entered Pink")
+	#background_2.visible = true
+#
+#
+#func _on_plate_2_body_entered(body: Node2D) -> void:
+	#print(body)
+	#print("Entered Yellow")
+	#background_3.visible = true
+#
+#func _on_plate_3_body_entered(body: Node2D) -> void:
+	#print(body)
+	#print("Entered Blue")
+	#background_4.visible = true
 
 
-func _on_plate_2_body_entered(body: Node2D) -> void:
-	print(body)
-	print("Entered Yellow")
-	background_3.visible = true
-
-func _on_plate_3_body_entered(body: Node2D) -> void:
-	print(body)
-	print("Entered Blue")
-	background_4.visible = true
-
-
-func _on_plate_1_body_exited(body: Node2D) -> void:
-	background_2.visible = false
-
-
-func _on_plate_2_body_exited(body: Node2D) -> void:
-	background_3.visible = false
-
-
-func _on_plate_3_body_exited(body: Node2D) -> void:
-	background_4.visible = false
+#func _on_plate_1_body_exited(body: Node2D) -> void:
+	#background_2.visible = false
+#
+#
+#func _on_plate_2_body_exited(body: Node2D) -> void:
+	#background_3.visible = false
+#
+#
+#func _on_plate_3_body_exited(body: Node2D) -> void:
+	#background_4.visible = false
