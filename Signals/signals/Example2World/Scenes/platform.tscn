@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://le8olvkjfexd"]
+
+[ext_resource type="Texture2D" uid="uid://dkv02nuvntkwe" path="res://Assets/terrain_grass_horizontal_middle.png" id="1_xqepn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqepn"]
+size = Vector2(131.9357, 104)
+
+[node name="platform" type="Node2D" unique_id=29777396]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2055105709]
+position = Vector2(581, 600)
+scale = Vector2(9.234376, 1)
+texture = ExtResource("1_xqepn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=515361654]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=98998538]
+position = Vector2(-0.66835785, -8)
+shape = SubResource("RectangleShape2D_xqepn")
