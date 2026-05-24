@@ -16,7 +16,7 @@ script = ExtResource("1_0bule")
 
 [node name="CharacterBody2D" parent="." unique_id=523630623 instance=ExtResource("2_4wgeq")]
 z_index = 1
-position = Vector2(551, 311)
+position = Vector2(144, 54)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=147083241]
 position = Vector2(575.00006, 326)
