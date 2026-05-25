@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var GRAVITY: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jump_counter: int = 0
-const MOVE_SPEED: float = 300.0
+const MOVE_SPEED: float = 350.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,18 +26,23 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y += GRAVITY * delta
 	
+	if is_on_floor():
+		jump_counter = 0
+		gravity_reset()
+	
 	########################################################
 	####################### JUMP ###########################
 	########################################################
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump_counter += 1
-		if not is_on_floor() and Input.is_action_just_pressed("jump") and jump_counter < 2:
-			jump_counter += 1 
+	if Input.is_action_just_pressed("jump"):
+		# GROUND JUMP
+		if is_on_floor():
+			velocity.y = -650.0
+			GRAVITY = 1500.0
+			jump_counter += 1
+		elif not is_on_floor() and jump_counter < 2: 
 			velocity.y = -600.0
-			GRAVITY = 2000.0
-		velocity.y = -700.0
-		GRAVITY = 2000.0
-	
+			GRAVITY = 2000.0 
+			jump_counter += 1
 		
 	########################################################
 	################# DIRECTIONAL MOVEMENT #################
