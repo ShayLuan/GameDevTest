@@ -21,14 +21,23 @@ func _physics_process(delta: float) -> void:
 	##################### GRAVITY ##########################
 	########################################################
 	if not is_on_floor():
-		velocity.y += GRAVITY * delta
+		if velocity.y > 0:
+			velocity.y += GRAVITY * 1.5 * delta
+		else:
+			velocity.y += GRAVITY * delta
 	
 	########################################################
 	####################### JUMP ###########################
 	########################################################
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jump_counter += 1
+		if not is_on_floor() and Input.is_action_just_pressed("jump") and jump_counter < 2:
+			jump_counter += 1 
+			velocity.y = -600.0
+			GRAVITY = 2000.0
 		velocity.y = -700.0
 		GRAVITY = 2000.0
+	
 		
 	########################################################
 	################# DIRECTIONAL MOVEMENT #################
