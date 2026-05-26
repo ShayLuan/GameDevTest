@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
 @onready var player: Sprite2D = $Player
+@onready var dash_timer: Timer = $Player/DashTimer
 
 var GRAVITY: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jump_counter: int = 0
-var MOVE_SPEED: float = 350.0
+var is_dashing: bool = false
+var dash_direction: float = 1.0 # direction we're facing
+const MOVE_SPEED: float = 350.0
+const DASH_SPEED: float = MOVE_SPEED * 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,8 +18,8 @@ func gravity_reset() -> void:
 	if GRAVITY != ProjectSettings.get_setting("physics/2d/default_gravity"):
 		GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func move_speed_reset():
-	MOVE_SPEED = 350.0
+#func move_speed_reset():
+	#MOVE_SPEED = 350.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -46,11 +50,17 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -600.0
 			GRAVITY = 2000.0 
 			jump_counter += 1
-		
+	########################################################
+	####################### DASH ###########################
+	########################################################
+
+	
 	########################################################
 	################# DIRECTIONAL MOVEMENT #################
 	########################################################
 	var direction_x := Input.get_axis("ui_left", "ui_right")
+	if direction_x != 0: 
+		dash_direction = sign(direction_x)
 	
 	# 2. Assign the movement to the built-in velocity variable
 	if direction_x:

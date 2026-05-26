@@ -13,6 +13,9 @@ script = ExtResource("1_mpvkf")
 [node name="Player" type="Sprite2D" parent="." unique_id=106564217]
 texture = ExtResource("1_4qf2g")
 
+[node name="DashTimer" type="Timer" parent="Player" unique_id=602471670]
+wait_time = 0.25
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1123540114]
 position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_mpvkf")
