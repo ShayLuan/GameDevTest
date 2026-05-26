@@ -79,3 +79,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, MOVE_SPEED)
 		
 	move_and_slide()
+
+func _on_dash_timer_timeout() -> void:
+	is_dashing = false
+	dash_timer.stop()
