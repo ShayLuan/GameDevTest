@@ -62,6 +62,11 @@ func _physics_process(delta: float) -> void:
 	if direction_x != 0: 
 		dash_direction = sign(direction_x)
 	
+	# check for DASH input
+	if Input.is_action_just_pressed("dash") and dash_timer.is_stopped():
+		is_dashing = true
+		dash_timer.start() # runs for 0.25 sec
+	
 	# 2. Assign the movement to the built-in velocity variable
 	if direction_x:
 		velocity.x = direction_x * MOVE_SPEED
