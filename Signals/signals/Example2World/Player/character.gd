@@ -67,10 +67,15 @@ func _physics_process(delta: float) -> void:
 		is_dashing = true
 		dash_timer.start() # runs for 0.25 sec
 	
+	# the actual DASH state
+	if is_dashing:
+		velocity.y = 0
+		velocity.x = dash_direction * DASH_SPEED
+	else: 
 	# 2. Assign the movement to the built-in velocity variable
-	if direction_x:
-		velocity.x = direction_x * MOVE_SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, MOVE_SPEED)
+		if direction_x:
+			velocity.x = direction_x * MOVE_SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, MOVE_SPEED)
 		
 	move_and_slide()
