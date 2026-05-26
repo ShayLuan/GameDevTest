@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var GRAVITY: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jump_counter: int = 0
-const MOVE_SPEED: float = 350.0
+var MOVE_SPEED: float = 350.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +13,9 @@ func _ready() -> void:
 func gravity_reset() -> void:
 	if GRAVITY != ProjectSettings.get_setting("physics/2d/default_gravity"):
 		GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func move_speed_reset():
+	MOVE_SPEED = 350.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
